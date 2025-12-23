@@ -37,6 +37,10 @@ jobs:
         run: |
           for i in {1..100000}; do echo -n 'foobar' >> foobar.txt; done
       - 
+        name: Print pwd
+        run: |
+          pwd
+      - 
         name: Upload Release Assets
         uses: actions/upload-artifact@v4
         with:
