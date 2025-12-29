@@ -47,3 +47,10 @@ jobs:
           name: my-artifact
           path: foobar.txt
           compression-level: 9 # maximum compression
+      - 
+        name: Release to RBE
+        uses: bentekkie/actions-rbe-output@a30bfa0fe5ba0bc3716bdd084e95a0eb9823bc6d
+        with:
+          name: go-release
+          path: dist
+          type: file
