@@ -1,0 +1,14 @@
+name: 'Sample Action with Output'
+description: 'A sample action that inserts custom output'
+outputs:
+  custom_result:
+    description: 'A custom output string'
+    value: ${{ steps.set-output.outputs.custom_result }}
+runs:
+  using: 'composite'
+  steps:
+    - id: set-output
+      shell: bash
+      run: |
+        echo "Executing sample custom step..."
+        echo "custom_result=Hello from custom action output!" >> $GITHUB_OUTPUT

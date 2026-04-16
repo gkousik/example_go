@@ -54,3 +54,11 @@ jobs:
           name: go-release
           path: dist
           type: file
+      - 
+        name: Run Custom Sample Action
+        id: custom-sample
+        uses: ./sample-action
+      - 
+        name: Print Sample Action Output
+        run: |
+          echo "The custom action produced: ${{ steps.custom-sample.outputs.custom_result }}"
