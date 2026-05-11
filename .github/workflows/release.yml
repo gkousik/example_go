@@ -12,6 +12,9 @@ permissions:
 jobs:
   goreleaser:
     runs-on: self-hosted
+    permissions:
+      id-token: 'write' # Required for requesting the JWT
+      contents: 'read' # Required for actions/checkout
     steps:
       -
         name: Checkout
